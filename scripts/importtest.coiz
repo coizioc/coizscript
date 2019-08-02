@@ -1,0 +1,22 @@
+import("lib/arrays");
+
+var arr = [2, 4, 6];
+print(arr);
+arr = append(arr, 8);
+print(arr);
+arr = remove(arr, 2);
+print(arr);
+print(sum(arr));
+print(reverse(arr));
+
+import("lib/math");
+
+var x = factorial(5);
+print(x);
+
+var y = 3.5;
+print(floor(y));
+print(ceil(y));
+print(round(y));
+
+print(exp(2,5));

@@ -1,0 +1,13 @@
+// Could easily replace with a for loop, but using a while loop for demonstration purposes.
+var i = 99;
+while(i > 0) {
+    var finalLine = "";
+    if(i > 1) {
+        print("%d bottles of beer on the wall, %d bottles of beer,", i, i);
+        print("Take one down, pass it around, %d bottles of beer on the wall!", i - 1);
+    } else {
+        print("%d bottle of beer on the wall, %d bottle of beer,", i, i);
+        print("No more bottles of beer on the wall!");
+    };
+    i -= 1;
+};

@@ -1,0 +1,82 @@
+var E = 2.718281828459045;
+var PI = 3.14159265358979323;
+
+func abs(a) {
+    if(a < 0) {
+        return -a;
+    } else {
+        return a;
+    };
+};
+
+func ceil(n) {
+    return -floor(-n);
+};
+
+func cos(x) {
+    // Fourth-degree MacLaurin series for cos(x).
+    return 1 - (exp(x, 2) / 2) + (exp(x, 4) / 24) - (exp(x, 6) / 720);
+};
+
+func exp(base, pow) {
+    var total = 1;
+    for(var i = 0; i < abs(pow); i += 1) {
+        total *= base;
+    };
+    if(pow < 0) {
+        total = 1 / total;
+    };
+    return total;
+};
+
+func factorial(n) {
+    if(n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    };
+};
+
+func floor(n) {
+    return n - (n % 1);
+};
+
+func round(n) {
+    var low = floor(n); var high = ceil(n);
+
+    if(low == 0.5) {
+        return high;
+    };
+
+    if(n - low < high - n) {
+        return low;
+    } else {
+        return high;
+    };
+};
+
+func sin(x) {
+    // Fourth-degree MacLaurin series for sin(x).
+    return x - (exp(x, 3) / 6) + (exp(x, 5) / 120) - (exp(x, 7) / 5040);
+};
+
+func sqrt(n) {
+    // e determines the accuracy of the result of this function.
+    var x = n; var y = 1; var e = 0.00001;
+
+    while(abs(x - y) > e) {
+        x = (x + y) / 2;
+        y = n / x;
+    };
+
+    // If sqrt is close enough to an integer value, make it an integer
+    // to account for n being a perfect square.
+    if(abs(x - floor(x)) < e) {
+        x = floor(x);
+    };
+    return x;
+};
+
+func tan(x) {
+    return sin(x) / cos(x);
+};

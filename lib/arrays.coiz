@@ -1,0 +1,67 @@
+func append(arr, e) {
+    var new = [e];
+    return arr + new;
+};
+
+func count(arr, e) {
+    var count = 0;
+    for(var i = 0; i < len(arr); i += 1) {
+        if(arr[i] == e) {
+            count += 1;
+        };
+    };
+    return count;
+};
+
+func extend(arr, e) {
+    return arr + e;
+};
+
+func find(arr, e) {
+    for(var i = 0; i < len(arr); i += 1) {
+        if(arr[i] == e) {
+            return i;
+        };
+    };
+    return -1;
+};
+
+func pop(arr, i) {
+    if(i > len(arr) - 1 or i < 0) {
+        return arr;
+    };
+
+    var newArr = [];
+    for(var j = 0; j < len(arr); j += 1) {
+        if(j != i) {
+            newArr = append(newArr, arr[j]);
+        };
+    };
+    return newArr;
+};
+
+func remove(arr, e) {
+    var newArr = [];
+    for(var i = 0; i < len(arr); i += 1) {
+        if(arr[i] != e) {
+            newArr = append(newArr, arr[i]);
+        };
+    };
+    return newArr;
+};
+
+func reverse(arr) {
+    var newArr = [];
+    for(var i = len(arr) - 1; i >= 0; i -= 1) {
+        newArr = append(newArr, arr[i]);
+    };
+    return newArr;
+};
+
+func sum(arr) {
+    var total = 0;
+    for(var i = 0; i < len(arr); i += 1) {
+        total += arr[i];
+    };
+    return total;
+};
